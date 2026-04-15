@@ -23,23 +23,23 @@
 </head>
 <body>
 
-    <h1>Ingresar un valor</h1>
+    <h1>El producto de la potencia de igual base ...... a<sup>m</sup>   </h1>
 
-    <input type="password" id="valor" placeholder="Escribí un número">
+    <input type="number" id="valor" placeholder="Escribí un número">
     <button onclick="calcular()">Calcular</button>
 
     <div id="resultado"></div>
 
     <script>
         function calcular() {
-            let valor = document.getElementById("valor").value;
+            let casa = document.getElementById("valor").value;
 
-            if (valor === "") {
+            if (casa === "") {
                 document.getElementById("resultado").innerHTML = "Por favor, ingresá un valor";
                 return;
             }
 
-            let resultado = valor * 2; // Acá podés cambiar la operación
+            let resultado = casa * 2; // Acá podés cambiar la operación
 
             document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
         }
