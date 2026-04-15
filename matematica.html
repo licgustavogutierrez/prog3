@@ -2,71 +2,48 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Evaluador de Notas</title>
+    <title>Calcular Resultado</title>
     <style>
         body {
-            font-family: Arial;
-            background: #f2f2f2;
+            font-family: Arial, sans-serif;
             text-align: center;
-            padding: 30px;
+            margin-top: 50px;
         }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-        input {
-            width: 80%;
-            padding: 8px;
+        input, button {
+            padding: 10px;
+            font-size: 16px;
             margin: 5px;
         }
-        button {
-            padding: 10px 20px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
         #resultado {
-            margin-top: 15px;
-            font-weight: bold;
+            margin-top: 20px;
+            font-size: 20px;
+            color: blue;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>Evaluador de Notas</h2>
+    <h1>Ingresar un valor</h1>
 
-    <input type="number" id="nota1" placeholder="Nota 1"><br>
-    <input type="number" id="nota2" placeholder="Nota 2"><br>
-    <input type="number" id="nota3" placeholder="Nota 3"><br>
-
-    <button onclick="evaluar()">Evaluar</button>
+    <input type="number" id="valor" placeholder="Escribí un número">
+    <button onclick="calcular()">Calcular</button>
 
     <div id="resultado"></div>
-</div>
 
-<script>
-function evaluar() {
-    let n1 = parseFloat(document.getElementById("nota1").value);
-    let n2 = parseFloat(document.getElementById("nota2").value);
-    let n3 = parseFloat(document.getElementById("nota3").value);
+    <script>
+        function calcular() {
+            let valor = document.getElementById("valor").value;
 
-    if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
-        document.getElementById("resultado").innerHTML = "⚠️ Ingresá todas las notas";
-        return;
-    }
+            if (valor === "") {
+                document.getElementById("resultado").innerHTML = "Por favor, ingresá un valor";
+                return;
+            }
 
-    let promedio = (n1 + n2 + n3) / 3;
+            let resultado = valor * 2; // Acá podés cambiar la operación
 
-    let estado = promedio >= 6 ? "✅ Aprobado" : "❌ Desaprobado";
-
-    document.getElementById("resultado").innerHTML = 
-        "Promedio: " + promedio.toFixed(2) + "<br>" + estado;
-}
-</script>
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+    </script>
 
 </body>
 </html>
