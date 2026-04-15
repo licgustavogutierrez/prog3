@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluador de Notas</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Evaluador de Notas</h2>
+
+    <input type="number" id="nota1" placeholder="Nota 1"><br>
+    <input type="number" id="nota2" placeholder="Nota 2"><br>
+    <input type="number" id="nota3" placeholder="Nota 3"><br>
+
+    <button onclick="evaluar()">Evaluar</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+function evaluar() {
+    let n1 = parseFloat(document.getElementById("nota1").value);
+    let n2 = parseFloat(document.getElementById("nota2").value);
+    let n3 = parseFloat(document.getElementById("nota3").value);
+
+    if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+        document.getElementById("resultado").innerHTML = "⚠️ Ingresá todas las notas";
+        return;
+    }
+
+    let promedio = (n1 + n2 + n3) / 3;
+
+    let estado = promedio >= 6 ? "✅ Aprobado" : "❌ Desaprobado";
+
+    document.getElementById("resultado").innerHTML = 
+        "Promedio: " + promedio.toFixed(2) + "<br>" + estado;
+}
+</script>
+
+</body>
+</html>
