@@ -23,9 +23,8 @@
 </head>
 <body>
 
-    <h2>El producto de la potencia de igual base ...... 
-        a<sup>m</sup>.a<sup>n</sup> = a<sup>m</sup>+<sup>n</sup>  </h2>
-<h1> Cuanto es 2<sup>5</sup> + 2<sup>3</sup>=     </h1>
+    <h2>Ingrese la base y exponente para que me de resultado un 8.. 
+        
       
     <input type="number" id="base" placeholder="Escribí la base">
     <input type="number" id="exponente" placeholder="Escribí la potencia">
@@ -53,7 +52,18 @@
 
             document.getElementById("resultado").innerText = 
                 "Resultado: " + resultado;
-        }
+		if (resultado === 8) {
+                window.alert("Correcto");
+                return;
+            }
+			{
+                window.alert("Incorrecto");
+                return;
+            }
+			
+		
+        
+		}
     </script>
 
 </body>
