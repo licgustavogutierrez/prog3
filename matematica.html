@@ -28,25 +28,31 @@
 <h1> Cuanto es 2<sup>5</sup> + 2<sup>3</sup>=     </h1>
       
     <input type="number" id="base" placeholder="Escribí la base">
-    <input type="number" id="potencia" placeholder="Escribí la potencia">
+    <input type="number" id="exponente" placeholder="Escribí la potencia">
     <button onclick="calcular()">Calcular</button>
 
-    <div id="resultado">h</div>
+    <div id="resultado"></div>
 
     <script>
-        function calcular() {
-            alert();
+       function calcular() {
             let base = document.getElementById("base").value;
-            let potencia = document.getElementById("potencia").value;
+            let exponente = document.getElementById("exponente").value;
 
+            // Validación
             if (base === "") {
-                document.getElementById("resultado").innerHTML = "Por favor, ingresá un valor";
+                document.getElementById("resultado").innerText = "Por favor ingresa la base.";
                 return;
             }
 
-            let resultado = base ⁿ potencia; // Acá podés cambiar la operación
+            if (exponente === "") {
+                document.getElementById("resultado").innerText = "Por favor ingresa el exponente.";
+                return;
+            }
 
-            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+            let resultado = Math.pow(base, exponente);
+
+            document.getElementById("resultado").innerText = 
+                "Resultado: " + resultado;
         }
     </script>
 
